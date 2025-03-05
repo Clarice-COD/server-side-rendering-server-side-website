@@ -4,19 +4,26 @@
 
 <main>
    <nav>
-        <a href="/maandag"></a>
-        <a href="/dinsdag"></a>
-        <a href="/woensdag"></a>
-        <a href="/donderdag"></a>
-        <a href="/vrijdag"></a>
-        <a href="/zaterdag"></a>
-        <a href="/zondag"></a>
+        <a href="/maandag">MA</a>
+        <a href="/dinsdag">DI</a>
+        <a href="/woensdag">WO</a>
+        <a href="/donderdag">DO</a>
+        <a href="/vrijdag">VR</a>
+        <a href="/zaterdag">ZA</a>
     </nav>
-    
+
     <h1>Programma radiostation</h1>
     <form action="">
-        <label for="filter">Selecteer een radiostation</label>
+        <label for="radio-select">Kies een radiostation</label>
+        <select name="radiostations" id="select-radiostation">
+            <option value="/slam">Slam FM</option>
+            <option value="/veronica">Radio Veronica</option>
+            <option value="/100%nl">100% NL</option>
+            <option value="/sublime">Sublime</option>
+            <option value="/sunlight">Sunlight</option>
+        </select>
     </form>
+
     <section>
         <h2>11:00</h2>
         <article>
