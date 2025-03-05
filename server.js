@@ -17,7 +17,6 @@ console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(apiResponseJSON)
 
-
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
 
@@ -27,7 +26,7 @@ app.use(express.static('public'))
 
 // Stel Liquid in als 'view engine'
 const engine = new Liquid();
-app.engine('liquid', engine.express()); 
+app.engine('liquid', engine.express());
 
 // Stel de map met Liquid templates in
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
@@ -36,11 +35,19 @@ app.set('views', './views')
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
 
-  const personResponse = await fetch('https://fdnd-agency.directus.app/items/mh_day?fields=*,shows.mh_shows_id.show')
-  const personResponseJSON = await personResponse.json()
-   // Render index.liquid uit de Views map
-   // Geef hier eventueel data aan mee
-   response.render('index.liquid', {persons: personResponseJSON.data})
+  const radiostationsUrl = "https://fdnd-agency.directus.app/items/mh_radiostations"
+  const radiostationsUrlFilters = "?fields=logo,name"
+
+  const radiostationsResponse = await fetch(radiostationsUrl + radiostationsUrlFilters)
+  const radiostationsResponseJSON = await radiostationsResponse.json()
+
+  const showsResponse = await fetch('https://fdnd-agency.directus.app/items/mh_day?fields.*.*.*')
+  const showsResponseJSON = await showsResponse.json()
+  console.log(showsResponseJSON);
+
+  // Render index.liquid uit de Views map
+  // Geef hier eventueel data aan mee
+  response.render('index.liquid', { radiostations: radiostationsResponseJSON.data, showdata: showsResponseJSON } )
 
 })
 

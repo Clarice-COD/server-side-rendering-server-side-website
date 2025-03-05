@@ -25,11 +25,17 @@
     </form>
 
     <section>
-        <h2>11:00</h2>
+        {% for show in showdata %}
+            <div>{{ show.body }}</div>
+        {% endfor %}
+    </section>
+
+    <section>
+        {% for radiostation in radiostations %}
         <article>
-            <h3>{{person.name}}</h3>
-            <p>{{person.date_created}}</p>
-            <a href="">{{person.logo}}</a>
+            <h3>{{ radiostation.name }}</h3>
+            <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radiostation.logo}}" alt=""></a>
         </article>
+        {% endfor %}
     </section>
 </main>
