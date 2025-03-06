@@ -33,8 +33,14 @@ app.set('views', './views')
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
 
-  const radioResponse = await fetch ('https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*')
-  const radioResponseJSON = await radioResponse.json()    
+  const radioUrl = "https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*"
+  const radioUrlFilters = "?fields=logo"
+  response.render('index.liquid', { radios: radioResponseJSON.data } )
+
+})
+
+  // const radioUrlJSON = await radioResponse.json()  
+    
   // const radiostationsUrl = "https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*"
   // const radiostationsUrlFilters = "?fields=logo,name,untill,from"
 
@@ -50,10 +56,8 @@ app.get('/', async function (request, response) {
 
   // Render index.liquid uit de Views map
   // Geef hier eventueel data aan mee
-  response.render('index.liquid', { radio: radioResponseJSON.data } )
 
-})
-
+  
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {

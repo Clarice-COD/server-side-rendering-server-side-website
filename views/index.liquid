@@ -1,3 +1,4 @@
+{% render 'views/head.liquid', title: 'Triple programma' %}
 <header>
     <a href="">TRIPLE</a>
 </header>
@@ -24,18 +25,19 @@
         </select>
     </form>
 
-    <section>
-        {% for show in showdata %}
-            <div>{{ show.body }}</div>
-        {% endfor %}
-    </section>
+    {% for radio in radios %}
+        <section>
+                <div>{{ radios.body }}</div>
+        </section>
+    {% endfor %}
 
-    <section>
-        {% for radiostation in radiostations %}
-        <article>
-            <h3>{{ radiostation.name }}</h3>
-            <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radiostation.logo}}" alt=""></a>
-        </article>
-        {% endfor %}
-    </section>
+    {% for radio in radios %}
+        <section>
+            <article>
+                <h3>{{ radios.name }}</h3>
+                <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radios.logo}}" alt=""></a>
+            </article>
+        </section>
+    {% endfor %}
 </main>
+{% render 'views/foot.liquid', triple: triple %}
