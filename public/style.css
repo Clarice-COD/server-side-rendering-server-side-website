@@ -48,6 +48,9 @@ body {
     --border-radius-m: 16px;
     --border-radius-l: 32px;
 
+    /* CLICK */
+    --pointer: pointer;
+
     font-family: var(--font-family);
     text-align: var(--font-center);
 
@@ -67,6 +70,7 @@ a {
     font-size: var(--titel-size-m);
     text-decoration: none;
     color: var(--secondary-text-color);
+    cursor: var(--pointer);
 }
 
 /* MAIN */
@@ -92,6 +96,7 @@ select {
     border: none;
     margin: var(--margin-size-s);
     font-weight: var(--font-weight-l);
+    cursor: var(--pointer);
 }
 
 .radiostations {
