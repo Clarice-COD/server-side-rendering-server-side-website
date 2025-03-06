@@ -4,7 +4,7 @@
 </header>
 
 <main>
-   <nav>
+   <nav> {% comment %} Filter op datum{% endcomment %}
         <a href="/maandag">MA</a>
         <a href="/dinsdag">DI</a>
         <a href="/woensdag">WO</a>
@@ -14,7 +14,7 @@
     </nav>
 
     <h1>Programma radiostation</h1>
-    <form action="">
+    <form action=""> {% comment %} Filter op specifieke radiostations {% endcomment %}
         <label for="radio-select">Kies een radiostation</label>
         <select name="radiostations" id="select-radiostation">
             <option value="/radiostations">Radiostations</option>
@@ -26,20 +26,12 @@
         </select>
     </form>
 
-    {% for radio in radios %}
-        <section>
-                {% comment %} <div>{{ radio.body }}</div> {% endcomment %}
-        </section>
-    {% endfor %}
-
-    {% for radio in radios %}
-        <section>
-            <article>
+    {% for radio in radios %} 
+            <article> {% comment %} programma inhoud radiostations {% endcomment %}
                 <h3>{{ radio.name }}</h3>
                 van {{ radio.from }} tot {{ radio.until }}
                 <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radio.logo}}" alt=""></a>
             </article>
-        </section>
     {% endfor %}
 </main>
 {% render 'views/foot.liquid', triple: triple %}
