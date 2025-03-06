@@ -27,6 +27,9 @@ body {
     --font-weight-m: 700;
     --font-weight-l: 900;
 
+    --font-center: center;
+    --font-left: left;
+
     /* PADDING */
     --padding-s: 12px;
     --padding-m: 22px;
@@ -43,6 +46,7 @@ body {
     --border-radius-l: 32px;
 
     font-family: var(--font-family);
+    text-align: var(--font-center);
 }
 
 h1 {
@@ -63,4 +67,5 @@ p {
 a {
     font-weight: var(--font-weight-l);
     font-size: var(--text-size-m);
+    text-decoration: none;
 }
