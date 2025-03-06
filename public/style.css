@@ -47,8 +47,26 @@ body {
 
     font-family: var(--font-family);
     text-align: var(--font-center);
+
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
+/* HEADER */
+header {
+    padding: var(--margin-size-l);
+    background-color: var(--primary-bg-color);
+}
+
+a {
+    font-weight: var(--font-weight-l);
+    font-size: var(--titel-size-m);
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
+
+/* MAIN */
 h1 {
     font-weight: var(--font-weight-l);
     font-size: var(--titel-size-m);
@@ -64,8 +82,3 @@ p {
     font-size: var(--text-size-s);
 }
 
-a {
-    font-weight: var(--font-weight-l);
-    font-size: var(--text-size-m);
-    text-decoration: none;
-}
