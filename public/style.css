@@ -9,8 +9,8 @@ body {
     --secondary-text-color: #FFFFFF;
     --highlight-color: #FE0170;
     --primary-bg-color: #011564;
-    --secondary-bg-color: #EFEFEF;
-    --tertiary-bg-color: #8B8B8B;
+    --secondary-bg-color: #FFFFFF;
+    --tertiary-bg-color: #EFEFEF;
 
     /* FONTS */
     --font-family: 'Brutal Type', sans-serif;
@@ -39,6 +39,9 @@ body {
     --margin-size-s: 8px;
     --margin-size-m: 22px;
     --margin-size-l: 32px;
+
+    /* GAP */
+    --gap-s: 8px;
 
     /* BORDER-RADIUS */
     --border-radius-s: 8px;
@@ -71,7 +74,6 @@ h1 {
     font-weight: var(--font-weight-l);
     font-size: var(--titel-size-m);
     color: var(--primary-text-color);
-    margin: 0;
 }
 
 
@@ -102,3 +104,22 @@ p {
     font-size: var(--text-size-s);
 }
 
+nav {
+    position: fixed;
+    padding: var(--padding-s);
+    bottom: 0;
+    height: 5rem;
+    background-color: var(--primary-bg-color);
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-s);
+}
+
+.filter-date {
+    font-size: var(--text-size-s);
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-text-color);
+    width: 4rem;
+    height: 3rem;
+    border-radius: var(--border-radius-s);
+}
