@@ -31,17 +31,17 @@ body {
     --font-left: left;
 
     /* PADDING */
-    --padding-s: 12px;
+    --padding-s: 8px;
     --padding-m: 22px;
     --padding-l: 32px;
 
     /* MARGIN */
-    --margin-size-s: 12px;
+    --margin-size-s: 8px;
     --margin-size-m: 22px;
     --margin-size-l: 32px;
 
     /* BORDER-RADIUS */
-    --border-radius-s: 12px;
+    --border-radius-s: 8px;
     --border-radius-m: 22px;
     --border-radius-l: 32px;
 
@@ -70,6 +70,26 @@ a {
 h1 {
     font-weight: var(--font-weight-l);
     font-size: var(--titel-size-m);
+    color: var(--primary-text-color);
+    margin: 0;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--margin-size-s);
+}
+
+select {
+    color: var(--secondary-text-color);
+    background-color: var(--highlight-color);
+    padding: var(--padding-s);
+    border-radius: var(--border-radius-s);
+    border: none;
+    margin: var(--margin-size-s);
+    font-weight: var(--font-weight-l);
 }
 
 h2 {
