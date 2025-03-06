@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Brutal Type";
+    src: url('/docs/font/');
+  }
+
+body {
+    /* COLOR */
+    --primary-text-color: #1E1E1E;
+    --secondary-text-color: #FFFFFF;
+    --highlight-color: #FE0170;
+    --primary-bg-color: #011564;
+    --secondary-bg-color: #EFEFEF;
+    --tertiary-bg-color: #8B8B8B;
+
+    /* FONTS */
+    --font-family: 'Brutal Type', sans-serif;
+
+    --titel-size-l: 58px;
+    --titel-size-m: 40px;
+    --titel-size-s: 36px;
+
+    --text-size-m: 20px;
+    --text-size-s: 16px;
+    --text-button: 16px;
+
+    --font-weight-s: 400;
+    --font-weight-m: 700;
+    --font-weight-l: 900;
+
+    /* PADDING */
+    --padding-s: 12px;
+    --padding-m: 22px;
+    --padding-l: 32px;
+
+    /* MARGIN */
+    --margin-size-s: 12px;
+    --margin-size-m: 22px;
+    --margin-size-l: 32px;
+
+    /* BORDER-RADIUS */
+    --border-radius-s: 12px;
+    --border-radius-m: 22px;
+    --border-radius-l: 32px;
+}
