@@ -27,15 +27,16 @@
 
     {% for radio in radios %}
         <section>
-                <div>{{ radios.body }}</div>
+                {% comment %} <div>{{ radio.body }}</div> {% endcomment %}
         </section>
     {% endfor %}
 
     {% for radio in radios %}
         <section>
             <article>
-                <h3>{{ radios.name }}</h3>
-                <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radios.logo}}" alt=""></a>
+                <h3>{{ radio.name }}</h3>
+                van {{ radio.from }} tot {{ radio.until }}
+                <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radio.logo}}" alt=""></a>
             </article>
         </section>
     {% endfor %}

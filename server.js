@@ -11,6 +11,18 @@ console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // const apiResponse = await fetch('...')
 const radioResponse = await fetch ('https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*')
 const radioResponseJSON = await radioResponse.json()
+
+const allShowsinner = [];
+ 
+radioResponseJSON.data.forEach(function(show) {
+ 
+  allShowsinner.push({
+      ...show.show,
+      from: show.from,
+      until: show.until,
+    });
+  });
+ 
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(apiResponseJSON)
@@ -35,7 +47,7 @@ app.get('/', async function (request, response) {
 
   const radioUrl = "https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*"
   const radioUrlFilters = "?fields=logo"
-  response.render('index.liquid', { radios: radioResponseJSON.data } )
+  response.render('index.liquid', { radios: allShowsinner} )
 
 })
 
@@ -57,7 +69,7 @@ app.get('/', async function (request, response) {
   // Render index.liquid uit de Views map
   // Geef hier eventueel data aan mee
 
-  
+
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {
