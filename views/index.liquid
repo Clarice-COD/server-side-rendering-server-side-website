@@ -26,12 +26,14 @@
         </select>
     </form>
 
-    {% for radio in radios %} 
-            <article> {% comment %} programma inhoud radiostations {% endcomment %}
-                <h2>{{ radio.name }}</h2>
-                van {{ radio.from }} tot {{ radio.until }}
-                <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radio.logo}}" alt=""></a>
-            </article>
-    {% endfor %}
+    <div class="radiostations">
+        {% for radio in radios %} 
+                <article class="radiostation"> {% comment %} programma inhoud radiostations {% endcomment %}
+                    <h2>{{ radio.name }}</h2>
+                    van {{ radio.from }} tot {{ radio.until }}
+                    <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radio.logo}}" alt=""></a>
+                </article>
+        {% endfor %}
+    </div>
 </main>
 {% render 'views/foot.liquid', triple: triple %}

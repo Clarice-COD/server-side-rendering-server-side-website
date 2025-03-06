@@ -45,7 +45,7 @@ body {
 
     /* BORDER-RADIUS */
     --border-radius-s: 8px;
-    --border-radius-m: 22px;
+    --border-radius-m: 16px;
     --border-radius-l: 32px;
 
     font-family: var(--font-family);
@@ -94,9 +94,25 @@ select {
     font-weight: var(--font-weight-l);
 }
 
+.radiostations {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-s);
+    margin: var(--margin-size-m);
+}
+
+.radiostation {
+    background-color: var(--tertiary-bg-color);
+    padding: var(--padding-s);
+    border-radius: var(--border-radius-m);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.266);
+    text-align: var(--font-left);
+}
+
 h2 {
     font-weight: var(--font-weight-l);
     font-size: var(--titel-size-s);
+    margin: 0;
 }
 
 p {
