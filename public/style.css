@@ -16,8 +16,8 @@ body {
     --font-family: 'Brutal Type', sans-serif;
 
     --titel-size-l: 58px;
-    --titel-size-m: 40px;
-    --titel-size-s: 36px;
+    --titel-size-m: 30px;
+    --titel-size-s: 20px;
 
     --text-size-m: 20px;
     --text-size-s: 16px;
@@ -41,4 +41,26 @@ body {
     --border-radius-s: 12px;
     --border-radius-m: 22px;
     --border-radius-l: 32px;
+
+    font-family: var(--font-family);
+}
+
+h1 {
+    font-weight: var(--font-weight-l);
+    font-size: var(--titel-size-m);
+}
+
+h2 {
+    font-weight: var(--font-weight-l);
+    font-size: var(--titel-size-s);
+}
+
+p {
+    font-weight: var(--font-weight-s);
+    font-size: var(--text-size-s);
+}
+
+a {
+    font-weight: var(--font-weight-l);
+    font-size: var(--text-size-m);
 }
