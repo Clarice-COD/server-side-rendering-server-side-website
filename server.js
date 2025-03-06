@@ -9,10 +9,8 @@ import { Liquid } from 'liquidjs';
 console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // Doe een fetch naar de data die je nodig hebt
 // const apiResponse = await fetch('...')
-
-// Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
-// const apiResponseJSON = await apiResponse.json()
-
+const radioResponse = await fetch ('https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*')
+const radioResponseJSON = await radioResponse.json()
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(apiResponseJSON)
@@ -35,19 +33,24 @@ app.set('views', './views')
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
 
-  const radiostationsUrl = "https://fdnd-agency.directus.app/items/mh_radiostations"
-  const radiostationsUrlFilters = "?fields=logo,name"
+  const radioResponse = await fetch ('https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*')
+  const radioResponseJSON = await radioResponse.json()    
+  // const radiostationsUrl = "https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*"
+  // const radiostationsUrlFilters = "?fields=logo,name,untill,from"
 
-  const radiostationsResponse = await fetch(radiostationsUrl + radiostationsUrlFilters)
-  const radiostationsResponseJSON = await radiostationsResponse.json()
+  //   const radiostationsUrl = "https://fdnd-agency.directus.app/items/mh_radiostations"
+  // const radiostationsUrlFilters = "?fields=logo,name"
 
-  const showsResponse = await fetch('https://fdnd-agency.directus.app/items/mh_day?fields.*.*.*')
-  const showsResponseJSON = await showsResponse.json()
-  console.log(showsResponseJSON);
+  // const radiostationsResponse = await fetch(radiostationsUrl + radiostationsUrlFilters)
+  // const radiostationsResponseJSON = await radiostationsResponse.json()
+
+  // const showsResponse = await fetch('https://fdnd-agency.directus.app/items/mh_day?fields.*.*.*')
+  // const showsResponseJSON = await showsResponse.json()
+  // console.log(showsResponseJSON);
 
   // Render index.liquid uit de Views map
   // Geef hier eventueel data aan mee
-  response.render('index.liquid', { radiostations: radiostationsResponseJSON.data, showdata: showsResponseJSON } )
+  response.render('index.liquid', { radio: radioResponseJSON.data } )
 
 })
 
