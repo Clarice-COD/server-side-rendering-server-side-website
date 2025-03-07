@@ -5,18 +5,11 @@
     <div class="radiostations">
         {% for day in calendar %} 
                 <article class="day"> {% comment %} programma inhoud radiostations {% endcomment %}
-                    <h2>{{ radio.date }}</h2>
                     {% for show in day.shows %}
-                        
+                        <h2>{{ show.mh_shows_id.show.name }}</h2>
                         <p>van {{ show.mh_shows_id.from }} tot {{ show.mh_shows_id.until }}</p>
-                        <h3>
-                            {{  show.mh_shows_id.show.name }}
-                        </h3>
-                        <h4>
-                            {{ show.mh_shows_id.show.radiostation.name }}
-                        </h4>
+                        <a href=""><img src="https://fdnd-agency.directus.app/assets/{{ show.mh_shows_id.show.radiostation.logo }}" alt=""></a>
                     {% endfor %}
-                    <a href=""><img src="https://fdnd-agency.directus.app/assets/{{radio.logo}}" alt=""></a>
                 </article>
         {% endfor %}
     </div>
