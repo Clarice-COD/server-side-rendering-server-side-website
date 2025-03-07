@@ -44,11 +44,21 @@ app.set('views', './views')
 
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
+  const radioUrl = "https://fdnd-agency.directus.app/items/mh_day?fields=date,shows.mh_shows_id.from,shows.mh_shows_id.until,shows.mh_shows_id.show.name,shows.mh_shows_id.show.radiostation.name,shows.mh_shows_id.show.radiostation.logo,shows.mh_shows_id.show.users.mh_users_id.full_name"
+  const radioResponse = await fetch(radioUrl)
+  const radioResponseJSON = await radioResponse.json()
 
-  const radioUrl = "https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*"
-  const radioUrlFilters = "?fields=logo"
-  response.render('index.liquid', { radios: allShowsinner} )
+  // const dayUrlFilters = "?fields="
+// https://fdnd-agency.directus.app/items/mh_day?fields=date,shows.mh_shows_id.from,shows.mh_shows_id.until,shows.mh_shows_id.show.name,shows.mh_shows_id.show.radiostation.name,shows.mh_shows_id.show.radiostation.logo,shows.mh_shows_id.show.users.mh_users_id.full_name
 
+  // const showsUrlFilters = "?fields="
+
+  // const radiostationsResponse = await fetch(radiostationsUrl + radiostationsUrlFilters)
+
+
+  // const radioUrl = "https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*"
+  // const radioUrlFilters = "?fields=logo"
+  response.render('index.liquid', { calendar: radioResponseJSON.data })
 })
 
   // const radioUrlJSON = await radioResponse.json()  

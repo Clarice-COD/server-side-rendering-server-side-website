@@ -7,3 +7,29 @@
     <title>Triple programma</title>
 </head>
 <body>
+
+    <header>
+        <a href="">TRIPLE</a>
+    </header>
+
+    <h1>Programma radiostation</h1>
+    <form action="/submit"> {% comment %} Filter op specifieke radiostations {% endcomment %}
+        <label for="select-radiostation">Kies een radiostation</label>
+        <select name="radiostations" id="select-radiostation">
+            <option value="/radiostations">RADIONSTATION</option>
+            <option value="/slam">Slam FM</option>
+            <option value="/veronica">Radio Veronica</option>
+            <option value="/100%nl">100% NL</option>
+            <option value="/sublime">Sublime</option>
+            <option value="/sunlight">Sunlight</option>
+        </select>
+    </form>
+
+    <nav> {% comment %} Filter op datum{% endcomment %}
+        <a class="filter-date" href="/maandag">MA</a>
+        <a class="filter-date" href="/dinsdag">DI</a>
+        <a class="filter-date" href="/woensdag">WO</a>
+        <a class="filter-date" href="/donderdag">DO</a>
+        <a class="filter-date" href="/vrijdag">VR</a>
+        <a class="filter-date" href="/zaterdag">ZA</a>
+    </nav>
