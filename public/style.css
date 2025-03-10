@@ -139,6 +139,7 @@ nav {
     display: flex;
     flex-direction: row;
     gap: var(--gap-s);
+    width: var(--width);
 }
 
 .filter-date {
