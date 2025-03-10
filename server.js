@@ -103,6 +103,13 @@ app.get('/zaterdag', async function (request, response) {
   response.render('index.liquid', { calendar: radioResponseJSON.data })
 })
 
+// DAY 7
+app.get('/zondag', async function (request, response) {
+  const radioResponse = await fetch('https://fdnd-agency.directus.app/items/mh_day?fields=date,shows.mh_shows_id.from,shows.mh_shows_id.until,shows.mh_shows_id.show.name,shows.mh_shows_id.show.radiostation.*,shows.mh_shows_id.show.users.mh_users_id.*&filter=%7B%22_and%22:[%7B%22weekday(date)%22:%227%22%7D,%7B%22shows%22:%7B%22mh_shows_id%22:%7B%22show%22:%7B%22radiostation%22:%7B%22name%22:%22Radio%20Veronica%22%7D%7D%7D%7D%7D]%7D')
+  const radioResponseJSON = await radioResponse.json()
+  response.render('index.liquid', { calendar: radioResponseJSON.data })
+})
+
 
 
   // const radioUrlJSON = await radioResponse.json()  
