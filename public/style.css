@@ -67,6 +67,7 @@ body {
 header {
     padding: var(--margin-size-l);
     background-color: var(--primary-bg-color);
+    width: var(--width);
 }
 
 a {
