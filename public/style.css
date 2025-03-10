@@ -57,6 +57,10 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+
+    /* SIZE */
+    --width: 100vw;
+    --height: 100vh;
 }
 
 /* HEADER */
