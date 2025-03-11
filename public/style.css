@@ -135,7 +135,7 @@ select {
     text-align: var(--font-left);
 
     @media (min-width: 426px) {
-        
+        /* margin-left: 10rem; */
       }
 }
 
@@ -176,6 +176,13 @@ nav {
     flex-direction: row;
     gap: var(--gap-s);
     width: var(--width);
+
+    @media (min-width: 426px) {
+        flex-direction: column;
+        height: var(--height);
+        width: 8rem;
+        position: fixed;
+    }
 }
 
 .filter-date {
@@ -185,4 +192,8 @@ nav {
     width: 4rem;
     height: 3rem;
     border-radius: var(--border-radius-s);
+
+    @media (min-width: 426px) {
+        width: 8rem;
+    }
 }
