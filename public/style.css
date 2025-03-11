@@ -119,7 +119,8 @@ select {
     "logo shows" 
     "logo time";
 
-    
+    max-width: 18rem;
+    margin: auto;
     background-color: var(--tertiary-bg-color);
     padding: var(--padding-s);
     border-radius: var(--border-radius-m);
