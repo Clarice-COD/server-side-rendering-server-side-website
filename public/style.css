@@ -51,16 +51,16 @@ body {
     /* CLICK */
     --pointer: pointer;
 
+    /* SIZE */
+    --width: 100vw;
+    --height: 100vh;
+
     font-family: var(--font-family);
     text-align: var(--font-center);
 
     display: flex;
     flex-direction: column;
     margin: 0;
-
-    /* SIZE */
-    --width: 100vw;
-    --height: 100vh;
 }
 
 /* HEADER */
@@ -111,12 +111,36 @@ select {
     margin: var(--margin-size-m);
 }
 
-.radiostation {
+.day {
+    display: grid;
+    grid-template-columns: 5em 14em;
+    grid-template-rows: 1.8em 1.8em;
+    grid-template-areas: 
+    "logo shows" 
+    "logo time";
+
+    
     background-color: var(--tertiary-bg-color);
     padding: var(--padding-s);
     border-radius: var(--border-radius-m);
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.266);
     text-align: var(--font-left);
+}
+
+.input-logo {
+    grid-area: logo;
+    width: 4rem;
+}
+
+.input-show {
+    grid-area: shows;
+    padding: var(--padding-s);
+}
+
+.input-time {
+    grid-area: time;
+    margin: 0;
+    padding: var(--padding-s);
 }
 
 h2 {
