@@ -109,6 +109,13 @@ select {
     flex-direction: column;
     gap: var(--gap-s);
     margin: var(--margin-size-m);
+
+    @media (min-width: 426px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        grid-gap: 2rem, 2rem;
+        
+    }
 }
 
 .day {
@@ -126,6 +133,10 @@ select {
     border-radius: var(--border-radius-m);
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.266);
     text-align: var(--font-left);
+
+    @media (min-width: 426px) {
+        
+      }
 }
 
 .input-logo {
