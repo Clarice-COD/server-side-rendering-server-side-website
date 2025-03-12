@@ -17,7 +17,7 @@ body {
 
     --titel-size-l: 58px;
     --titel-size-m: 30px;
-    --titel-size-s: 20px;
+    --titel-size-s: 16px;
 
     --text-size-m: 20px;
     --text-size-s: 16px;
@@ -65,9 +65,13 @@ body {
 
 /* HEADER */
 header {
-    padding: var(--margin-size-l);
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0;
     background-color: var(--primary-bg-color);
     width: var(--width);
+    height: 4rem;
 }
 
 a {
@@ -76,6 +80,10 @@ a {
     text-decoration: none;
     color: var(--secondary-text-color);
     cursor: var(--pointer);
+}
+
+.triple {
+    /* align-self: center; */
 }
 
 /* MAIN */
@@ -120,7 +128,7 @@ select {
 
 .day {
     display: grid;
-    grid-template-columns: 5em 14em;
+    grid-template-columns: 5em 12em;
     grid-template-rows: 1.8em 1.8em;
     grid-template-areas: 
     "logo shows" 
@@ -146,13 +154,12 @@ select {
 
 .input-show {
     grid-area: shows;
-    padding: var(--padding-s);
 }
 
 .input-time {
     grid-area: time;
     margin: 0;
-    padding: var(--padding-s);
+    font-size: var(--text-size-s);
 }
 
 h2 {
@@ -177,7 +184,7 @@ nav {
     gap: var(--gap-s);
     width: var(--width);
 
-    @media (min-width: 426px) {
+    @media (min-width: 775px) {
         flex-direction: column;
         height: var(--height);
         width: 8rem;
