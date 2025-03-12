@@ -66,6 +66,8 @@ body {
 /* HEADER */
 header {
     position: sticky;
+    display: grid;
+    place-items: center;
     left: 0;
     right: 0;
     top: 0;
@@ -183,6 +185,9 @@ nav {
     flex-direction: row;
     gap: var(--gap-s);
     width: var(--width);
+    overflow: auto;
+    left: 0;
+    right: 0;
 
     @media (min-width: 775px) {
         flex-direction: column;
@@ -199,6 +204,7 @@ nav {
     width: 4rem;
     height: 3rem;
     border-radius: var(--border-radius-s);
+    flex-shrink: 0;
 
     @media (min-width: 426px) {
         width: 8rem;
