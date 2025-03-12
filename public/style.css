@@ -167,7 +167,7 @@ main {
     text-align: var(--font-left);
 
     @media (min-width: 775px) {
-        /* margin-left: 10rem; */
+        margin-left: 1rem;
       }
 }
 
