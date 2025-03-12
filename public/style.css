@@ -8,6 +8,7 @@ body {
     --primary-text-color: #1E1E1E;
     --secondary-text-color: #FFFFFF;
     --highlight-color: #FE0170;
+    --secundairy-highlight-color: #0091FF;
     --primary-bg-color: #011564;
     --secondary-bg-color: #FFFFFF;
     --tertiary-bg-color: #EFEFEF;
@@ -87,19 +88,19 @@ a {
     cursor: var(--pointer);
 }
 
-.triple {
-    /* align-self: center; */
-}
+
 
 /* MAIN */
 h1 {
     font-weight: var(--font-weight-l);
     font-size: var(--titel-size-m);
     color: var(--primary-text-color);
+    margin-top: 4rem;
 
     @media (min-width: 775px) {
         text-align: var(--font-left);
-        margin-left: 10rem;
+        margin-left: 13rem;
+        margin-top: 6rem;
     }
 }
 
@@ -112,7 +113,7 @@ form {
 
     @media (min-width: 775px) {
         align-items: flex-start;
-        margin-left: 10rem;
+        margin-left: 13rem;
     }
 }
 
@@ -137,8 +138,12 @@ select {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
         grid-gap: 2rem, 2rem;
-        
+        margin-left: 5rem;
     }
+}
+
+select:hover{
+    background-color: var(--secundairy-highlight-color);
 }
 
 main {
@@ -167,8 +172,8 @@ main {
     text-align: var(--font-left);
 
     @media (min-width: 775px) {
-        margin-left: 1rem;
-      }
+        margin-left: 0;
+    }
 }
 
 .input-logo {
@@ -215,7 +220,7 @@ nav {
     @media (min-width: 775px) {
         flex-direction: column;
         height: var(--height);
-        width: 8rem;
+        width: 10rem;
         position: fixed;
         place-items: center;
     }
@@ -235,4 +240,8 @@ nav {
     @media (min-width: 775px) {
         width: 8rem;
     }
+}
+
+.filter-date:hover {
+    background-color: var(--highlight-color);
 }
