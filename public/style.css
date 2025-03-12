@@ -205,8 +205,10 @@ nav {
     height: 3rem;
     border-radius: var(--border-radius-s);
     flex-shrink: 0;
+    display: grid;
+    place-items: center;
 
-    @media (min-width: 426px) {
+    @media (min-width: 775px) {
         width: 8rem;
     }
 }
